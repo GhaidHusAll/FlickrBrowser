@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
         android:queryHint="Search Here"
+        android:layout_marginTop="15dp"
         android:visibility="visible"
         android:background="#CFCDCD"
         app:layout_constraintEnd_toEndOf="parent"

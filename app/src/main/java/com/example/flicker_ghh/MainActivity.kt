@@ -45,18 +45,25 @@ class MainActivity : AppCompatActivity() {
         val myAPI = Client().request()?.create(APIs::class.java)
         myAPI?.getPhoto(search,"flickr.photos.search")?.enqueue(object: Callback<Photo> {
             override fun onResponse(call: Call<Photo>, response: Response<Photo>) {
-                val result = response.body()!!.photos.photo
-                Log.d("MAIN","  \n${result}")
-                myList.clear()
-                for (item in result){
-                    if (item.farm!=0){
-                        myList.add(
-                            PhotoX(item.farm,
-                            item.id,item.isfamily,item.isfriend,item.ispublic,
-                            item.owner,item.secret,item.server,item.title))
+                try {
+                    val result = response.body()!!
+                    Log.d("MAIN", "  \n${result}")
+                    myList.clear()
+                    for (item in result.photos.photo) {
+                        if (item.farm != 0) {
+                            myList.add(
+                                PhotoX(
+                                    item.farm,
+                                    item.id, item.isfamily, item.isfriend, item.ispublic,
+                                    item.owner, item.secret, item.server, item.title
+                                )
+                            )
+                        }
                     }
+                    adapter.updateRecyclerView(myList)
+                }catch (e:Exception){
+                    Log.d("MAIN","something went wrong1 ${e.localizedMessage}")
                 }
-                adapter.updateRecyclerView(myList)
             }
 
             override fun onFailure(call: Call<Photo>, t: Throwable) {
