@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/androidCODES/Flicker_GHH/app/src/main/res/layout/activity_favorites.xml" value="0.1852355072463768" />
         <entry key="..\:/androidCODES/Flicker_GHH/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/androidCODES/Flicker_GHH/app/src/main/res/layout/row.xml" value="0.1546875" />
+        <entry key="..\:/androidCODES/Flicker_GHH/app/src/main/res/layout/rowf.xml" value="0.15520833333333334" />
       </map>
     </option>
   </component>

@@ -5,37 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#546054"
-    tools:context=".MainActivity">
+    tools:context=".FavoritesActivity">
 
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search Here"
-        android:layout_marginTop="15dp"
-        android:visibility="visible"
-        android:background="#CFCDCD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-
-    </androidx.appcompat.widget.SearchView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mainRV"
+        android:id="@+id/mainRVF"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_margin="12dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <LinearLayout
-        android:id="@+id/llDisplay"
+        android:id="@+id/llDisplayF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
@@ -48,24 +32,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageButton
-            android:id="@+id/btnFav"
+            android:id="@+id/btnUnFav"
             android:layout_gravity="left"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#40FFFFFF"
             android:textColor="@color/black"
-            app:srcCompat="@drawable/like" />
+            app:srcCompat="@drawable/liked" />
 
 
         <ImageView
-            android:id="@+id/ivDisplay"
+            android:id="@+id/ivDisplayF"
             android:layout_width="400dp"
             android:layout_height="400dp"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tvDisplay"
+            android:id="@+id/tvDisplayF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="title.."
@@ -86,18 +71,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/mainRV"
+        app:layout_constraintBottom_toBottomOf="@+id/mainRVF"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" >
         <Button
-            android:id="@+id/btnToFavs"
+            android:id="@+id/btnBackToMain"
             android:layout_gravity="right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#40FFFFFF"
             android:textColor="@color/black"
-            android:text="Favorites" />
+            android:text="Back" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

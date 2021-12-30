@@ -1,7 +1,7 @@
-package com.example.flicker_ghh
+package com.example.flicker_ghh.api
 
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 
 class Client {
 
@@ -10,7 +10,7 @@ class Client {
     fun request():Retrofit?{
         retrofitVar = Retrofit.Builder()
             .baseUrl("https://www.flickr.com/services/rest/").
-            addConverterFactory(GsonConverterFactory.create()).build()
+            addConverterFactory(SimpleXmlConverterFactory.create()).build()
         return retrofitVar
     }
 }

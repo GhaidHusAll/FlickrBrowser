@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.flicker_ghh.databinding.RowBinding
+import com.example.flicker_ghh.model.Photo
 
-class AdapterPhoto(var list: ArrayList<PhotoX>, private val activity: Activity):RecyclerView.Adapter<AdapterPhoto.HolderAdapter>() {
+class AdapterPhoto(var list: ArrayList<Photo>, private val activity: Activity):RecyclerView.Adapter<AdapterPhoto.HolderAdapter>() {
     class HolderAdapter(val binding: RowBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderAdapter {
@@ -23,15 +24,13 @@ class AdapterPhoto(var list: ArrayList<PhotoX>, private val activity: Activity):
             Glide.with(activity).load(url).into(ivImage)
         }
         holder.binding.cv.setOnClickListener {
-            //c for large
-            val urlBig = "https://farm${item.farm}.staticflickr.com/${item.server}/${item.id}_${item.secret}_c.jpg"
-            (activity as MainActivity).displayMood(urlBig,item.title)
+                (activity as MainActivity).displayMood(item)
         }
     }
 
     override fun getItemCount() = list.size
 
-    fun updateRecyclerView(newList: ArrayList<PhotoX>){
+    fun updateRecyclerView(newList: ArrayList<Photo>){
         this.list = newList
         notifyDataSetChanged()
     }
