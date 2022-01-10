@@ -94,7 +94,7 @@
             android:layout_gravity="right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#40FFFFFF"
+            android:backgroundTint="#7EFFFFFF"
             android:textColor="@color/black"
             android:text="Favorites" />
 

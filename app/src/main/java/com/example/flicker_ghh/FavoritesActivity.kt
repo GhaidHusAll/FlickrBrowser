@@ -79,13 +79,13 @@ class FavoritesActivity : AppCompatActivity() {
         if (selectedPhoto != null){
             CoroutineScope(IO).launch {
                 val isDelete = dao.delete(
-                    PhotoRoom(0,selectedPhoto?.id!!,selectedPhoto?.owner!!,
+                    PhotoRoom(selectedPhoto?.pk!!,selectedPhoto?.id!!,selectedPhoto?.owner!!,
                         selectedPhoto?.secret!!,selectedPhoto?.server!!,selectedPhoto?.farm!!,
                         selectedPhoto?.title!!,selectedPhoto?.isPublic!!,selectedPhoto?.isFriend!!,
                         selectedPhoto?.isFamily!!)
                 )
                 withContext(Main){
-                    if (isDelete == 0){
+                    if (isDelete > 0){
                         binding.btnUnFav.setImageResource(R.drawable.like)
                         fetch()
                     }else{
